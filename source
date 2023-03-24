@@ -1,0 +1,28 @@
+_G.autoTap = true
+_G.autoDmg = true
+_G.autoReb = true
+
+
+spawn(function()
+    while _G.autoTap == true do
+        game:GetService("ReplicatedStorage").Remotes.Click:InvokeServer()
+        wait()
+    end
+end)
+
+spawn(function() 
+    while _G.autoDmg do
+        game:GetService("ReplicatedStorage").Remotes.DamageBoss:FireServer()
+        wait()
+    end
+end)
+
+spawn(function() 
+    while _G.autoReb do
+        game:GetService("ReplicatedStorage").Remotes.Rebirth:FireServer()
+        wait()
+    end
+end)
+
+
+print('Hello User')
